@@ -1,4 +1,4 @@
-# Lambda WP Modbus/TCP Integration
+# Lambda WP Modbus/TCP Integration. In case another model is used (e.g. EU08L, EU15L) you may want to change the used naming convention accordingly.
 modbus:
   - name: "EU13L"
     type: tcp
