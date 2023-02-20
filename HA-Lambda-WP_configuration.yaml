@@ -5,7 +5,7 @@ modbus:
     host: 192.168.1.120
     port: 502
     sensors:
-#General Ambient
+#General Ambient section
         - name: EU13L_Ambient_Error_Number
           address: 0000
           input_type: holding
@@ -50,7 +50,7 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-# General E-Manager
+# General E-Manager section
         - name: EU13L_EMgr_Error_Number
           address: 0100
           input_type: holding
@@ -95,7 +95,7 @@ modbus:
           scale: 1
           precision: 0
           data_type: int16
-# Heat Pump No. 1 --for additonal heatpumps, this section needs to be duplicated and second digit of address increased by 1--
+# Heat Pump No. 1 section --for additonal heatpumps, this section needs to be duplicated, rename name to "...Hp2...." and second digit of address increased by 1--
         - name: EU13L_Hp1_Error_State
           address: 1000
           input_type: holding
@@ -220,7 +220,7 @@ modbus:
           scale: 0.01
           precision: 2
           data_type: int16
-# Boiler  --for additonal boiler, this section needs to be duplicated and second digit of address increased by 1--
+# Boiler section --for additonal boiler, this section needs to be duplicated, rename the name to ....Boil2...." and increase second digit of address by 1--
         - name: EU13L_Boil1_Error_Number
           address: 2000
           input_type: holding
@@ -265,7 +265,7 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-# Buffer  --for additonal buffer, this section needs to be duplicated and second digit of address increased by 1--
+# Buffer  --for additonal buffer, this section needs to be duplicated, rename name to "...Buff2...." and increase second digit of address by 1--
         - name: EU13L_Buff1_Error_Number
           address: 3000
           input_type: holding
@@ -310,7 +310,7 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-# Solar  --for additonal solar modules, this section needs to be duplicated and second digit of address increased by 1--
+# Solar  --for additonal solar modules, this section needs to be duplicated, rename name to "...Sol2..." and increase second digit of address by 1--
         - name: EU13L_Sol1_Error_Number
           address: 4000
           input_type: holding
@@ -373,7 +373,7 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-# Heating Circuit -- e.g. underfloor heating --for additonal heating circuits , this section needs to be duplicated and second digit of address increased by 1--
+# Heating Circuit -- e.g. underfloor heating --for additonal heating circuits , this section needs to be duplicated, rename name to "...Hc2..." and increase second digit of address by 1--
         - name: EU13L_Hc1_Error_Number
           address: 5000
           input_type: holding
@@ -462,7 +462,7 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-# Heating Circuit 2 (e.g. radiators --for additonal heating circuits , this section needs to be duplicated and second digit of address increased by 1--
+# Heating Circuit 2 (e.g. radiators --for additonal heating circuits , this section needs to be duplicated, rename name to "...Hc3..." and increase second digit of address by 1--
         - name: EU13L_Hc2_Error_Number
           address: 5100
           input_type: holding
@@ -567,7 +567,7 @@ sensor:
       eu13l_hp1_error_state_txt:
         friendly_name: "EU13L_Hp1_Error_State_txt"
         value_template: >
-          {{ ['None', 'Message', 'Warnung', 'Alarm', 'Fault'][states('sensor.eu13l_hp1_error_state')|int] }}
+          {{ ['OK', 'Message', 'Warnung', 'Alarm', 'Fault'][states('sensor.eu13l_hp1_error_state')|int] }}
       eu13l_hp1_state_txt:
         friendly_name: "EU13L_Hp1_State_txt"
         value_template: >
