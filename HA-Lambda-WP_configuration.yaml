@@ -9,7 +9,6 @@ modbus:
         - name: EU13L_Ambient_Error_Number
           address: 0000
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -17,8 +16,6 @@ modbus:
         - name: EU13L_Ambient_Operating_State
           address: 0001
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -27,7 +24,7 @@ modbus:
           address: 0002
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
           count: 1
           scale: 0.1
           precision: 1
@@ -36,7 +33,6 @@ modbus:
           address: 0003
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
           count: 1
           scale: 0.1
           precision: 1
@@ -45,7 +41,6 @@ modbus:
           address: 0004
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
           count: 1
           scale: 0.1
           precision: 1
@@ -54,7 +49,6 @@ modbus:
         - name: EU13L_EMgr_Error_Number
           address: 0100
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -62,8 +56,6 @@ modbus:
         - name: EU13L_EMgr_Operating_State
           address: 0101
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -72,7 +64,8 @@ modbus:
           address: 0102
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          state_class: measurement
+          device_class: power
           count: 1
           scale: 1
           precision: 0
@@ -81,7 +74,8 @@ modbus:
           address: 0103
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          state_class: measurement
+          device_class: power
           count: 1
           scale: 1
           precision: 0
@@ -90,7 +84,7 @@ modbus:
           address: 0104
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          device_class: power
           count: 1
           scale: 1
           precision: 0
@@ -99,7 +93,6 @@ modbus:
         - name: EU13L_Hp1_Error_State
           address: 1000
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -107,7 +100,6 @@ modbus:
         - name: EU13L_Hp1_Error_Number
           address: 1001
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -115,8 +107,6 @@ modbus:
         - name: EU13L_Hp1_State
           address: 1002
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -124,8 +114,6 @@ modbus:
         - name: EU13L_Hp1_Operating_State
           address: 1003
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -134,7 +122,8 @@ modbus:
           address: 1004
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temperature
           count: 1
           scale: 0.01
           precision: 1
@@ -143,7 +132,8 @@ modbus:
           address: 1005
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temperature
           count: 1
           scale: 0.01
           precision: 1
@@ -152,7 +142,8 @@ modbus:
           address: 1006
           input_type: holding
           unit_of_measurement: "l/min"
-          state_class: total
+          state_class: measurement
+          device_class: volume
           count: 1
           scale: 0.1
           precision: 1
@@ -161,7 +152,8 @@ modbus:
           address: 1007
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temperature
           count: 1
           scale: 0.01
           precision: 1
@@ -170,7 +162,8 @@ modbus:
           address: 1008
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temperature
           count: 1
           scale: 0.01
           precision: 1
@@ -179,7 +172,8 @@ modbus:
           address: 1009
           input_type: holding
           unit_of_measurement: "l/min"
-          state_class: total
+          state_class: measurement
+          device_class: volume
           count: 1
           scale: 0.01
           precision: 1
@@ -188,7 +182,8 @@ modbus:
           address: 1010
           input_type: holding
           unit_of_measurement: "%"
-          state_class: total
+          state_class: measurement
+          device_class: power_factor
           count: 1
           scale: 0.01
           precision: 0
@@ -197,7 +192,8 @@ modbus:
           address: 1011
           input_type: holding
           unit_of_measurement: "kW"
-          state_class: total
+          state_class: measurement
+          device_class: power
           count: 1
           scale: 0.1
           precision: 1
@@ -206,7 +202,8 @@ modbus:
           address: 1012
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          state_class: measurement
+          device_class: power
           count: 1
           scale: 1
           precision: 0
@@ -214,8 +211,7 @@ modbus:
         - name: EU13L_Hp1_COP
           address: 1013
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
+          state_class: measurement
           count: 1
           scale: 0.01
           precision: 2
@@ -224,7 +220,6 @@ modbus:
         - name: EU13L_Boil1_Error_Number
           address: 2000
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -232,8 +227,6 @@ modbus:
         - name: EU13L_Boil1_Operating_state
           address: 2001
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -242,7 +235,8 @@ modbus:
           address: 2002
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -251,7 +245,8 @@ modbus:
           address: 2003
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -260,7 +255,7 @@ modbus:
           address: 2050
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -269,7 +264,6 @@ modbus:
         - name: EU13L_Buff1_Error_Number
           address: 3000
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -277,8 +271,6 @@ modbus:
         - name: EU13L_Buff1_Operating_state
           address: 3001
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -287,7 +279,8 @@ modbus:
           address: 3002
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -296,7 +289,8 @@ modbus:
           address: 3003
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -305,7 +299,7 @@ modbus:
           address: 3050
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -314,7 +308,6 @@ modbus:
         - name: EU13L_Sol1_Error_Number
           address: 4000
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -322,8 +315,6 @@ modbus:
         - name: EU13L_Sol1_Operating_state
           address: 4001
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -332,7 +323,8 @@ modbus:
           address: 4002
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -341,7 +333,8 @@ modbus:
           address: 4003
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -350,7 +343,8 @@ modbus:
           address: 4004
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -359,7 +353,7 @@ modbus:
           address: 4050
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -368,7 +362,7 @@ modbus:
           address: 4051
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -377,7 +371,6 @@ modbus:
         - name: EU13L_Hc1_Error_Number
           address: 5000
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -385,8 +378,6 @@ modbus:
         - name: EU13L_Hc1_Operating_state
           address: 5001
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -395,7 +386,8 @@ modbus:
           address: 5002
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -404,7 +396,8 @@ modbus:
           address: 5003
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -413,7 +406,8 @@ modbus:
           address: 5004
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -422,7 +416,7 @@ modbus:
           address: 5005
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -430,7 +424,6 @@ modbus:
         - name: EU13L_Hc1_Operating_mode
           address: 5006
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -439,7 +432,7 @@ modbus:
           address: 5050
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -448,7 +441,7 @@ modbus:
           address: 5051
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -457,7 +450,7 @@ modbus:
           address: 5052
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -466,7 +459,6 @@ modbus:
         - name: EU13L_Hc2_Error_Number
           address: 5100
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -474,8 +466,6 @@ modbus:
         - name: EU13L_Hc2_Operating_state
           address: 5101
           input_type: holding
-          unit_of_measurement: ""
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -484,7 +474,8 @@ modbus:
           address: 5102
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -493,16 +484,18 @@ modbus:
           address: 5103
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
           data_type: int16
-        - name: EU13L_Hc2_Romm_device_temperature
+        - name: EU13L_Hc2_Room_device_temperature
           address: 5104
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          state_class: measurement
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -511,7 +504,7 @@ modbus:
           address: 5105
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -519,7 +512,6 @@ modbus:
         - name: EU13L_Hc2_Operating_mode
           address: 5106
           input_type: holding
-          state_class: total
           count: 1
           scale: 1
           precision: 0
@@ -528,7 +520,7 @@ modbus:
           address: 5150
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -537,7 +529,7 @@ modbus:
           address: 5151
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
@@ -546,7 +538,7 @@ modbus:
           address: 5152
           input_type: holding
           unit_of_measurement: "°C"
-          state_class: total
+          device_class: temeperature
           count: 1
           scale: 0.1
           precision: 1
