@@ -552,7 +552,7 @@ modbus:
           precision: 1
           data_type: int16
 
-# Convertion of numerical returncodes to text
+# Conversion of numerical returncodes to text:
 sensor:
   - platform: template
     sensors:
