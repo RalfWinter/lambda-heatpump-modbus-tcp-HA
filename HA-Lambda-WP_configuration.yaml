@@ -1,16 +1,17 @@
-# Lambda WP Modbus/TCP Integration. In case another model is used (e.g. EU08L, EU15L) you may want to change the used naming convention accordingly.
+# Lambda WP Modbus/TCP Integration
+# based on Lambda Modbus specification dated 11.04.2023
+# Change name according to your requirements, host to the IP of your heatpump
 modbus:
   - name: "EU13L"
     type: tcp
     host: 192.168.1.120
     port: 502
     sensors:
-#General Ambient section
+#General Ambient
         - name: EU13L_Ambient_Error_Number
           address: 0000
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -19,7 +20,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -28,7 +28,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -37,7 +36,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -46,16 +44,15 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
-# General E-Manager section
+# General E-Manager
+# comment this section in case you have no E-Manager active
         - name: EU13L_EMgr_Error_Number
           address: 0100
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -64,7 +61,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -73,7 +69,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -82,7 +77,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -91,16 +85,14 @@ modbus:
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
-# Heat Pump No. 1 section --for additonal heatpumps, this section needs to be duplicated, rename name to "...Hp2...." and second digit of address increased by 1--
+# Heat Pump No. 1 --for additonal heatpumps, this section needs to be duplicated and second digit of address increased by 1--
         - name: EU13L_Hp1_Error_State
           address: 1000
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -108,7 +100,6 @@ modbus:
           address: 1001
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -117,7 +108,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -126,7 +116,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -135,7 +124,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.01
           precision: 1
           data_type: int16
@@ -144,7 +132,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.01
           precision: 1
           data_type: int16
@@ -153,7 +140,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "l/min"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -162,8 +148,7 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
-          scale: 0.01
+          scale: 0.1
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Energy_source_outlet_temperature
@@ -171,8 +156,7 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
-          scale: 0.01
+          scale: 0.1
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Volume_flow_energy_source
@@ -180,7 +164,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "l/min"
           state_class: total
-          count: 1
           scale: 0.01
           precision: 1
           data_type: int16
@@ -189,7 +172,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "%"
           state_class: total
-          count: 1
           scale: 0.01
           precision: 0
           data_type: uint16
@@ -198,7 +180,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "kW"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -207,7 +188,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -216,16 +196,70 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 0.01
           precision: 2
           data_type: int16
-# Boiler section --for additonal boiler, this section needs to be duplicated, rename the name to ....Boil2...." and increase second digit of address by 1--
+        - name: EU13L_Hp1_Request-Type
+          address: 1015
+          input_type: holding
+          unit_of_measurement: ""
+          state_class: total
+          scale: 1
+          precision: 0
+          data_type: int16
+        - name: EU13L_Hp1_Requested_flow_line_temperature
+          address: 1016
+          input_type: holding
+          unit_of_measurement: "°C"
+          state_class: total
+          scale: 0.1
+          precision: 1
+          data_type: int16
+        - name: EU13L_Hp1_Requested_return_line_temperature
+          address: 1017
+          input_type: holding
+          unit_of_measurement: "°C"
+          state_class: total
+          scale: 0.1
+          precision: 1
+          data_type: int16
+        - name: EU13L_Hp1_Requested_flow_to_return_line_temperature_difference
+          address: 1018
+          input_type: holding
+          unit_of_measurement: "°C"
+          state_class: total
+          scale: 0.1
+          precision: 1
+          data_type: int16
+        - name: EU13L_Hp1_Relais_State_2nd_Heating_Stage
+          address: 1019
+          input_type: holding
+          unit_of_measurement: ""
+          state_class: total
+          scale: 1
+          precision: 0
+          data_type: int16
+        - name: EU13L_Hp1_Compressor_Power_Consumption_accumulated
+          address: 1020
+          input_type: holding
+          unit_of_measurement: "Wh"
+          state_class: total
+          scale: 1
+          precision: 0
+          data_type: int32
+        - name: EU13L_Hp1_Compressor_Thermal_Energy_Output_accumulated
+          address: 1022
+          input_type: holding
+          unit_of_measurement: "Wh"
+          state_class: total
+          scale: 1
+          precision: 0
+          data_type: int32
+# Boiler  --for additonal boiler, this section needs to be duplicated and second digit of address increased by 1--
         - name: EU13L_Boil1_Error_Number
           address: 2000
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -234,7 +268,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -243,7 +276,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -252,7 +284,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -261,16 +292,14 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
-# Buffer  --for additonal buffer, this section needs to be duplicated, rename name to "...Buff2...." and increase second digit of address by 1--
+# Buffer  --for additonal buffer, this section needs to be duplicated and second digit of address increased by 1--
         - name: EU13L_Buff1_Error_Number
           address: 3000
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -279,7 +308,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -288,7 +316,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -297,7 +324,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -306,16 +332,15 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
-# Solar  --for additonal solar modules, this section needs to be duplicated, rename name to "...Sol2..." and increase second digit of address by 1--
+# Solar  --for additonal solar modules, this section needs to be duplicated and second digit of address increased by 1--
+# comment this section in case you have no Solar module active
         - name: EU13L_Sol1_Error_Number
           address: 4000
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -324,7 +349,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -333,7 +357,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -342,7 +365,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -351,7 +373,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -360,7 +381,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -369,16 +389,14 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
-# Heating Circuit -- e.g. underfloor heating --for additonal heating circuits , this section needs to be duplicated, rename name to "...Hc2..." and increase second digit of address by 1--
+# Heating Circuit -- e.g. underfloor heating --for additonal heating circuits , this section needs to be duplicated and second digit of address increased by 1--
         - name: EU13L_Hc1_Error_Number
           address: 5000
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -387,7 +405,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -396,7 +413,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -405,7 +421,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -414,7 +429,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -423,7 +437,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -431,7 +444,6 @@ modbus:
           address: 5006
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -440,7 +452,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -449,7 +460,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -458,16 +468,15 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
-# Heating Circuit 2 (e.g. radiators --for additonal heating circuits , this section needs to be duplicated, rename name to "...Hc3..." and increase second digit of address by 1--
+# Heating Circuit 2 (e.g. radiators --for additonal heating circuits , this section needs to be duplicated and second digit of address increased by 1--
+# delete or comment this section in case you have no further heating circuits
         - name: EU13L_Hc2_Error_Number
           address: 5100
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -476,7 +485,6 @@ modbus:
           input_type: holding
           unit_of_measurement: ""
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: uint16
@@ -485,7 +493,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -494,7 +501,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -503,7 +509,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -512,7 +517,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -520,7 +524,6 @@ modbus:
           address: 5106
           input_type: holding
           state_class: total
-          count: 1
           scale: 1
           precision: 0
           data_type: int16
@@ -529,7 +532,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -538,7 +540,6 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
@@ -547,12 +548,12 @@ modbus:
           input_type: holding
           unit_of_measurement: "°C"
           state_class: total
-          count: 1
           scale: 0.1
           precision: 1
           data_type: int16
 
-# Conversion of numerical returncodes to text:
+# Conversion of numerical returncodes to text
+# this is German language, change accordingly. English definitions are found in the Modbus spec: https://lambda-wp.at/wp-content/uploads/2023/04/Modbus-Protokoll-und-Beschreibung.pdf
 sensor:
   - platform: template
     sensors:
@@ -576,6 +577,10 @@ sensor:
         friendly_name: "EU13L_Hp1_Operating_State_txt"
         value_template: >
           {{ ['Standby', 'Central Heating', 'Domestic Hot Water', 'Cold Climate', 'Circulate', 'Defrost', 'Off', 'Frost', 'Standby-Frost', 'Not used', 'Summer', 'Holiday', 'Error', 'Warning', 'Info-Message', 'Time-Block', 'Release-Block', 'Mintemp-Block', 'Firmware-Download'][states('sensor.eu13l_hp1_operating_state')|int] }}
+      eu13l_hp1_request_type_txt:
+        friendly_name: "EU13L_Hp1_Request-Type_txt"
+        value_template: >
+          {{ ['No Request', 'Flow Pump Circulation', 'Central Heating', 'Central Cooling', 'Domestic Hot Water'][states('sensor.eu13l_hp1_request-type')|int] }}
       eu13l_boil1_operating_state_txt:
         friendly_name: "EU13L_Boil1_Operating_State_txt"
         value_template: >
