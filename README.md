@@ -2,7 +2,7 @@ Last year I moved from a natural gas heating to a heatpump system from the Austr
 
 The heatpump controller talks VNC and MODBUS/tcp. VNC offers a nice graphical view, but Lambda requires a VPN constantly opened into my local network, I do not like this idea. Once you know the local VNC-password the VPN is no longer required, however, in order to have the data in Home Assistant and to be able to control the heatpump as soon as I have solar panels on my roof, convinced me to integrate the MODBUS registers of the heatpunp into HA.
 
-I could not fully test all sensors because I have not all features installed which are described in Lambda's MODBUS specification (this can be downloaded from Lambda's website). The version of MODBUS specification I found at the time of writing the yaml file was dated September 9th, 2021.
+I could not fully test all sensors because I have not all features installed which are described in Lambda's MODBUS specification (this can be downloaded from Lambda's website). The version of MODBUS specification I found at the time of writing the yaml file was dated April 11th, 2023.
 
 Here is a quick view of a simple representation of the data in HA:
 <picture>
