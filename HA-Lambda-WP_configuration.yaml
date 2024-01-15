@@ -138,9 +138,9 @@ modbus:
         - name: EU13L_Hp1_Volume_flow_heat_sink
           address: 1006
           input_type: holding
-          unit_of_measurement: "l/min"
+          unit_of_measurement: "l/h"
           state_class: total
-          scale: 0.1
+          scale: 1
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Energy_source_inlet_temperature
