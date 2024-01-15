@@ -6,5 +6,5 @@ I could not fully test all sensors because I have not all features installed whi
 
 Here is a quick view of a simple representation of the data in HA:
 <picture>
-  <img alt="Shows my dashboard for the Lambda-WP in HA" src="">
+  <img alt="Shows my dashboard for the Lambda-WP in HA" src="https://up.picr.de/45219936eh.png">
 </picture>
