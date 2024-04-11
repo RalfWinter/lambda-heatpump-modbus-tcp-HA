@@ -50,14 +50,14 @@ modbus:
 # General E-Manager
 # comment this section in case you have no E-Manager active
         - name: EU13L_EMgr_Error_Number
-          address: 0100
+          address: 100
           input_type: holding
           state_class: total
           scale: 1
           precision: 0
           data_type: int16
         - name: EU13L_EMgr_Operating_State
-          address: 0101
+          address: 101
           input_type: holding
           unit_of_measurement: ""
           state_class: total
@@ -65,7 +65,7 @@ modbus:
           precision: 0
           data_type: uint16
         - name: EU13L_EMgr_Actual_Power
-          address: 0102
+          address: 102
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
@@ -73,7 +73,7 @@ modbus:
           precision: 0
           data_type: int16
         - name: EU13L_EMgr_Actual_Power_Consumption
-          address: 0103
+          address: 103
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
@@ -81,7 +81,7 @@ modbus:
           precision: 0
           data_type: int16
         - name: EU13L_EMgr_Power_Consumption_Setpoint
-          address: 0104
+          address: 104
           input_type: holding
           unit_of_measurement: "W"
           state_class: total
