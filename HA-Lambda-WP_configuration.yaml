@@ -1,6 +1,9 @@
 # Lambda WP Modbus/TCP Integration
 # based on Lambda Modbus specification dated 11.04.2023
 # Change name according to your requirements, host to the IP of your heatpump
+# 
+# the contents of this file needs to be appended to the configuration.yaml in your HA-installation!
+#
 modbus:
   - name: "EU13L"
     type: tcp
