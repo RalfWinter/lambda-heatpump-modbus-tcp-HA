@@ -148,7 +148,7 @@ modbus:
           input_type: holding
           unit_of_measurement: "l/h"
           state_class: total
-          scale: 1
+          scale: 0.01
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Energy_source_inlet_temperature
@@ -157,7 +157,7 @@ modbus:
           unit_of_measurement: "°C"
           state_class: measurement
           device_class: temperature
-          scale: 0.1
+          scale: 0.01
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Energy_source_outlet_temperature
@@ -166,7 +166,7 @@ modbus:
           unit_of_measurement: "°C"
           state_class: measurement
           device_class: temperature
-          scale: 0.1
+          scale: 0.01
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Volume_flow_energy_source
