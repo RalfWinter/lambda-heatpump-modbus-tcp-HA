@@ -157,7 +157,7 @@ modbus:
           unit_of_measurement: "°C"
           state_class: measurement
           device_class: temperature
-          scale: 0.1
+          scale: 0.01
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Energy_source_outlet_temperature
@@ -166,7 +166,7 @@ modbus:
           unit_of_measurement: "°C"
           state_class: measurement
           device_class: temperature
-          scale: 0.1
+          scale: 0.01
           precision: 1
           data_type: int16
         - name: EU13L_Hp1_Volume_flow_energy_source
@@ -598,52 +598,52 @@ sensor:
       eu13l_ambient_operating_state_txt:
         friendly_name: "EU13L_Ambient_Operating_State_txt"
         value_template: >
-          {{ ['Off', 'Automatik', 'Manual', 'Error'][states('sensor.eu13l_ambient_operating_state')|int] }}
+          {{ ['Off', 'Automatik', 'Manual', 'Error'][states('sensor.eu13l_ambient_operating_state')|int(0)] }}
       eu13l_emgr_operating_state_txt:
         friendly_name: "EU13L_EMgr_Operating_State_txt"
         value_template: >
-          {{ ['Off', 'Automatik', 'Manual', 'Error', 'Offline'][states('sensor.eu13l_emgr_operating_state')|int] }}
+          {{ ['Off', 'Automatik', 'Manual', 'Error', 'Offline'][states('sensor.eu13l_emgr_operating_state')|int(0)] }}
       eu13l_hp1_error_state_txt:
         friendly_name: "EU13L_Hp1_Error_State_txt"
         value_template: >
-          {{ ['OK', 'Message', 'Warnung', 'Alarm', 'Fault'][states('sensor.eu13l_hp1_error_state')|int] }}
+          {{ ['OK', 'Message', 'Warnung', 'Alarm', 'Fault'][states('sensor.eu13l_hp1_error_state')|int(0)] }}
       eu13l_hp1_state_txt:
         friendly_name: "EU13L_Hp1_State_txt"
         value_template: >
-          {{ ['Init', 'Reference', 'Restart-Block', 'Ready', 'Start Pumps', 'Start Compressor', 'Pre-Regulation', 'Regulation', 'Not Used', 'Cooling', 'Defrosting', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Stopping', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Fault-Lock', 'Alarm-Block', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Error-Reset'][states('sensor.eu13l_hp1_state')|int] }}
+          {{ ['Init', 'Reference', 'Restart-Block', 'Ready', 'Start Pumps', 'Start Compressor', 'Pre-Regulation', 'Regulation', 'Not Used', 'Cooling', 'Defrosting', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Stopping', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Fault-Lock', 'Alarm-Block', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Error-Reset'][states('sensor.eu13l_hp1_state')|int(0)] }}
       eu13l_hp1_operating_state_txt:
         friendly_name: "EU13L_Hp1_Operating_State_txt"
         value_template: >
-          {{ ['Standby', 'Central Heating', 'Domestic Hot Water', 'Cold Climate', 'Circulate', 'Defrost', 'Off', 'Frost', 'Standby-Frost', 'Not used', 'Summer', 'Holiday', 'Error', 'Warning', 'Info-Message', 'Time-Block', 'Release-Block', 'Mintemp-Block', 'Firmware-Download'][states('sensor.eu13l_hp1_operating_state')|int] }}
+          {{ ['Standby', 'Central Heating', 'Domestic Hot Water', 'Cold Climate', 'Circulate', 'Defrost', 'Off', 'Frost', 'Standby-Frost', 'Not used', 'Summer', 'Holiday', 'Error', 'Warning', 'Info-Message', 'Time-Block', 'Release-Block', 'Mintemp-Block', 'Firmware-Download'][states('sensor.eu13l_hp1_operating_state')|int(0)] }}
       eu13l_hp1_request_type_txt:
         friendly_name: "EU13L_Hp1_Request-Type_txt"
         value_template: >
-          {{ ['No Request', 'Flow Pump Circulation', 'Central Heating', 'Central Cooling', 'Domestic Hot Water'][states('sensor.eu13l_hp1_request-type')|int] }}
+          {{ ['No Request', 'Flow Pump Circulation', 'Central Heating', 'Central Cooling', 'Domestic Hot Water'][states('sensor.eu13l_hp1_request-type')|int(0)] }}
       eu13l_boil1_operating_state_txt:
         friendly_name: "EU13L_Boil1_Operating_State_txt"
         value_template: >
-          {{ ['Standby', 'Domestic Hot Water', 'Legio', 'Summer', 'Frost', 'Holiday', 'Prio-Stop', 'Error', 'Off', 'Prompt-DHW', 'Trailing-Stop', 'Temp-Lock', 'Standby-Frost'][states('sensor.eu13l_boil1_operating_state')|int] }}
+          {{ ['Standby', 'Domestic Hot Water', 'Legio', 'Summer', 'Frost', 'Holiday', 'Prio-Stop', 'Error', 'Off', 'Prompt-DHW', 'Trailing-Stop', 'Temp-Lock', 'Standby-Frost'][states('sensor.eu13l_boil1_operating_state')|int(0)] }}
       eu13l_buff1_operating_state_txt:
         friendly_name: "EU13L_Buff1_Operating_State_txt"
         value_template: >
-          {{ ['Standby', 'Heating', 'Cooling', 'Summer', 'Frost', 'Holiday', 'Prio-Stop', 'Error', 'Off', 'Standby-Frost'][states('sensor.eu13l_buff1_operating_state')|int] }}
+          {{ ['Standby', 'Heating', 'Cooling', 'Summer', 'Frost', 'Holiday', 'Prio-Stop', 'Error', 'Off', 'Standby-Frost'][states('sensor.eu13l_buff1_operating_state')|int(0)] }}
       eu13l_sol1_operating_state_txt:
         friendly_name: "EU13L_Sol1_Operating_State_txt"
         value_template: >
-          {{ ['Standby', 'Heating', 'Error', 'Off'][states('sensor.eu13l_sol1_operating_state')|int] }}
+          {{ ['Standby', 'Heating', 'Error', 'Off'][states('sensor.eu13l_sol1_operating_state')|int(0)] }}
       eu13l_hc1_operating_state_txt:
         friendly_name: "EU13L_Hc1_Operating_State_txt"
         value_template: >
-          {{ ['Heating', 'Eco', 'Cooling', 'Floor-dry', 'Frost', 'Max-Temp', 'Error', 'Service', 'Holiday', 'Central Heating Summer', 'Central Cooling Winter', 'Prio-Stop', 'Off', 'Release-Off', 'Time-Off', 'Standby', 'Standby-Heating', 'Standby-Eco', 'Standby-Cooling', 'Standby-Frost', 'Standby-Floor-dry'][states('sensor.eu13l_hc1_operating_state')|int] }}
+          {{ ['Heating', 'Eco', 'Cooling', 'Floor-dry', 'Frost', 'Max-Temp', 'Error', 'Service', 'Holiday', 'Central Heating Summer', 'Central Cooling Winter', 'Prio-Stop', 'Off', 'Release-Off', 'Time-Off', 'Standby', 'Standby-Heating', 'Standby-Eco', 'Standby-Cooling', 'Standby-Frost', 'Standby-Floor-dry'][states('sensor.eu13l_hc1_operating_state')|int(0)] }}
       eu13l_hc1_operating_mode_txt:
         friendly_name: "EU13L_Hc1_Operating_Mode_txt"
         value_template: >
-          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc1_operating_mode')|int] }}
+          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc1_operating_mode')|int(0)] }}
       eu13l_hc2_operating_state_txt:
         friendly_name: "EU13L_Hc2_Operating_State_txt"
         value_template: >
-          {{ ['Heating', 'Eco', 'Cooling', 'Floor-dry', 'Frost', 'Max-Temp', 'Error', 'Service', 'Holiday', 'Central Heating Summer', 'Central Cooling Winter', 'Prio-Stop', 'Off', 'Release-Off', 'Time-Off', 'Standby', 'Standby-Heating', 'Standby-Eco', 'Standby-Cooling', 'Standby-Frost', 'Standby-Floor-dry'][states('sensor.eu13l_hc2_operating_state')|int] }}
+          {{ ['Heating', 'Eco', 'Cooling', 'Floor-dry', 'Frost', 'Max-Temp', 'Error', 'Service', 'Holiday', 'Central Heating Summer', 'Central Cooling Winter', 'Prio-Stop', 'Off', 'Release-Off', 'Time-Off', 'Standby', 'Standby-Heating', 'Standby-Eco', 'Standby-Cooling', 'Standby-Frost', 'Standby-Floor-dry'][states('sensor.eu13l_hc2_operating_state')|int(0)] }}
       eu13l_hc2_operating_mode_txt:
         friendly_name: "EU13L_Hc2_Operating_Mode_txt"
         value_template: >
-          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc2_operating_mode')|int] }}
+          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc2_operating_mode')|int(0) }}
