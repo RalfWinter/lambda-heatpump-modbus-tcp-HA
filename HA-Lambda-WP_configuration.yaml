@@ -646,4 +646,4 @@ sensor:
       eu13l_hc2_operating_mode_txt:
         friendly_name: "EU13L_Hc2_Operating_Mode_txt"
         value_template: >
-          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc2_operating_mode')|int(0) }}
+          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc2_operating_mode')|int(0)] }}
