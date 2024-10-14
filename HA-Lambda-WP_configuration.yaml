@@ -537,7 +537,7 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-        - name: EU13L_Hc2_Romm_device_temperature
+        - name: EU13L_Hc2_Room_device_temperature
           address: 5104
           input_type: holding
           unit_of_measurement: "°C"
