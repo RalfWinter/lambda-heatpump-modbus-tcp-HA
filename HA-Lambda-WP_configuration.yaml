@@ -7,7 +7,7 @@
 modbus:
   - name: "EU13L"
     type: tcp
-    host: 192.168.1.120
+    host: 192.168.10.35
     port: 502
     sensors:
 #General Ambient
@@ -502,94 +502,6 @@ modbus:
           scale: 0.1
           precision: 1
           data_type: int16
-# Heating Circuit 2 (e.g. radiators --for additonal heating circuits , this section needs to be duplicated and second digit of address increased by 1--
-# delete or comment this section in case you have no further heating circuits
-        - name: EU13L_Hc2_Error_Number
-          address: 5100
-          input_type: holding
-          state_class: total
-          scale: 1
-          precision: 0
-          data_type: int16
-        - name: EU13L_Hc2_Operating_state
-          address: 5101
-          input_type: holding
-          unit_of_measurement: ""
-          state_class: total
-          scale: 1
-          precision: 0
-          data_type: uint16
-        - name: EU13L_Hc2_Flow_line_temperature
-          address: 5102
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-        - name: EU13L_Hc2_Return_line_temperature
-          address: 5103
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-        - name: EU13L_Hc2_Room_device_temperature
-          address: 5104
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-        - name: EU13L_Hc2_Set_flow_line_temperature
-          address: 5105
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-        - name: EU13L_Hc2_Operating_mode
-          address: 5106
-          input_type: holding
-          state_class: total
-          scale: 1
-          precision: 0
-          data_type: int16
-        - name: EU13L_Hc2_Set_flow_line_offset_temperature
-          address: 5150
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-        - name: EU13L_Hc2_Set_heating_mode_room_temperature
-          address: 5151
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-        - name: EU13L_Hc2_Set_cooling_mode_room_temperature
-          address: 5152
-          input_type: holding
-          unit_of_measurement: "°C"
-          state_class: measurement
-          device_class: temperature
-          scale: 0.1
-          precision: 1
-          data_type: int16
-
 # Conversion of numerical returncodes to text
 # this is German language, change accordingly. English definitions are found in the Modbus spec: https://lambda-wp.at/wp-content/uploads/2023/04/Modbus-Protokoll-und-Beschreibung.pdf
 sensor:
@@ -639,11 +551,3 @@ sensor:
         friendly_name: "EU13L_Hc1_Operating_Mode_txt"
         value_template: >
           {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc1_operating_mode')|int(0)] }}
-      eu13l_hc2_operating_state_txt:
-        friendly_name: "EU13L_Hc2_Operating_State_txt"
-        value_template: >
-          {{ ['Heating', 'Eco', 'Cooling', 'Floor-dry', 'Frost', 'Max-Temp', 'Error', 'Service', 'Holiday', 'Central Heating Summer', 'Central Cooling Winter', 'Prio-Stop', 'Off', 'Release-Off', 'Time-Off', 'Standby', 'Standby-Heating', 'Standby-Eco', 'Standby-Cooling', 'Standby-Frost', 'Standby-Floor-dry'][states('sensor.eu13l_hc2_operating_state')|int(0)] }}
-      eu13l_hc2_operating_mode_txt:
-        friendly_name: "EU13L_Hc2_Operating_Mode_txt"
-        value_template: >
-          {{ ['Off', 'Manual', 'Automatik', 'Auto-Heating', 'Auto-Cooling', 'Frost', 'Summer', 'Floor-dry'][states('sensor.eu13l_hc2_operating_mode')|int(0)] }}
