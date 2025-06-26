@@ -74,7 +74,8 @@ modbus:
           address: 102
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          device_class: power
+          state_class: measurement
           scale: 1
           precision: 0
           data_type: int16
@@ -82,7 +83,8 @@ modbus:
           address: 103
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          device_class: power
+          state_class: measurement
           scale: 1
           precision: 0
           data_type: int16
@@ -90,6 +92,7 @@ modbus:
           address: 104
           input_type: holding
           unit_of_measurement: "W"
+          device_class: power
           state_class: total
           scale: 1
           precision: 0
@@ -147,7 +150,8 @@ modbus:
           address: 1006
           input_type: holding
           unit_of_measurement: "l/h"
-          state_class: total
+          state_class: measurement
+          device_class: volume_flow_rate
           scale: 1
           precision: 1
           data_type: int16
@@ -173,7 +177,8 @@ modbus:
           address: 1009
           input_type: holding
           unit_of_measurement: "l/min"
-          state_class: total
+          state_class: measurement
+          device_class: volume_flow_rate
           scale: 0.01
           precision: 1
           data_type: int16
@@ -189,7 +194,8 @@ modbus:
           address: 1011
           input_type: holding
           unit_of_measurement: "kW"
-          state_class: total
+          state_class: measurement
+          device_class: power
           scale: 0.1
           precision: 1
           data_type: int16
@@ -197,7 +203,8 @@ modbus:
           address: 1012
           input_type: holding
           unit_of_measurement: "W"
-          state_class: total
+          device_class: power
+          state_class: measurement
           scale: 1
           precision: 0
           data_type: int16
@@ -256,7 +263,8 @@ modbus:
           address: 1020
           input_type: holding
           unit_of_measurement: "Wh"
-          state_class: total
+          device_class: energy
+          state_class: total_increasing
           scale: 1
           precision: 0
           data_type: int32
@@ -264,7 +272,8 @@ modbus:
           address: 1022
           input_type: holding
           unit_of_measurement: "Wh"
-          state_class: total
+          device_class: energy
+          state_class: total_increasing
           scale: 1
           precision: 0
           data_type: int32
