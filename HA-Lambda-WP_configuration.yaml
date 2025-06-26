@@ -591,7 +591,7 @@ modbus:
           data_type: int16
 
 # Conversion of numerical returncodes to text
-# this is German language, change accordingly. English definitions are found in the Modbus spec: https://lambda-wp.at/wp-content/uploads/2023/04/Modbus-Protokoll-und-Beschreibung.pdf
+# this is German language, change accordingly. English definitions are found in the Modbus spec: https://lambda-wp.at/wp-content/uploads/2025/04/Modbus-Beschreibung-und-Protokoll.pdf 
 sensor:
   - platform: template
     sensors:
