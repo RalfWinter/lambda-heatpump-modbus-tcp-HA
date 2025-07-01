@@ -93,7 +93,7 @@ modbus:
           input_type: holding
           unit_of_measurement: "W"
           device_class: power
-          state_class: total
+          state_class: measurement
           scale: 1
           precision: 0
           data_type: int16
@@ -149,7 +149,7 @@ modbus:
         - name: EU13L_Hp1_Volume_flow_heat_sink
           address: 1006
           input_type: holding
-          unit_of_measurement: "l/h"
+          unit_of_measurement: "L/h"
           state_class: measurement
           device_class: volume_flow_rate
           scale: 1
@@ -176,7 +176,7 @@ modbus:
         - name: EU13L_Hp1_Volume_flow_energy_source
           address: 1009
           input_type: holding
-          unit_of_measurement: "l/min"
+          unit_of_measurement: "L/min"
           state_class: measurement
           device_class: volume_flow_rate
           scale: 0.01
