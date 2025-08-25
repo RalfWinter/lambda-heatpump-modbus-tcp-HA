@@ -266,6 +266,7 @@ modbus:
           device_class: energy
           state_class: total_increasing
           scale: 1
+          swap: word
           precision: 0
           data_type: int32
         - name: EU13L_Hp1_Compressor_Thermal_Energy_Output_accumulated
@@ -275,6 +276,7 @@ modbus:
           device_class: energy
           state_class: total_increasing
           scale: 1
+          swap: word
           precision: 0
           data_type: int32
 # Boiler  --for additonal boiler, this section needs to be duplicated and second digit of address increased by 1--
