@@ -265,6 +265,8 @@ modbus:
           unit_of_measurement: "Wh"
           device_class: energy
           state_class: total_increasing
+# Uncomment next line in case the value is not displayed correctly
+#          swap: word
           scale: 1
           precision: 0
           data_type: int32
@@ -274,6 +276,8 @@ modbus:
           unit_of_measurement: "Wh"
           device_class: energy
           state_class: total_increasing
+# Uncomment next line in case the value is not displayed correctly
+#          swap: word
           scale: 1
           precision: 0
           data_type: int32
