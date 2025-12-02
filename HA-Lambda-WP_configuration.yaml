@@ -135,7 +135,7 @@ modbus:
           state_class: measurement
           device_class: temperature
           scale: 0.01
-          precision: 1
+          precision: 2
           data_type: int16
         - name: EU13L_Hp1_Return_Line_Temperature
           address: 1005
@@ -144,7 +144,7 @@ modbus:
           state_class: measurement
           device_class: temperature
           scale: 0.01
-          precision: 1
+          precision: 2
           data_type: int16
         - name: EU13L_Hp1_Volume_flow_heat_sink
           address: 1006
@@ -153,7 +153,7 @@ modbus:
           state_class: measurement
           device_class: volume_flow_rate
           scale: 1
-          precision: 1
+          precision: 0
           data_type: int16
         - name: EU13L_Hp1_Energy_source_inlet_temperature
           address: 1007
@@ -162,7 +162,7 @@ modbus:
           state_class: measurement
           device_class: temperature
           scale: 0.01
-          precision: 1
+          precision: 2
           data_type: int16
         - name: EU13L_Hp1_Energy_source_outlet_temperature
           address: 1008
@@ -171,7 +171,7 @@ modbus:
           state_class: measurement
           device_class: temperature
           scale: 0.01
-          precision: 1
+          precision: 2
           data_type: int16
         - name: EU13L_Hp1_Volume_flow_energy_source
           address: 1009
@@ -180,7 +180,7 @@ modbus:
           state_class: measurement
           device_class: volume_flow_rate
           scale: 0.01
-          precision: 1
+          precision: 2
           data_type: int16
         - name: EU13L_Hp1_Compressor_unit_rating
           address: 1010
@@ -188,7 +188,7 @@ modbus:
           unit_of_measurement: "%"
           state_class: total
           scale: 0.01
-          precision: 0
+          precision: 2
           data_type: uint16
         - name: EU13L_Hp1_Actual_Heating_Capacity
           address: 1011
@@ -600,7 +600,6 @@ modbus:
           data_type: int16
 
 # Conversion of numerical returncodes to text
-# this is German language, change accordingly. English definitions are found in the Modbus spec: https://lambda-wp.at/wp-content/uploads/2025/04/Modbus-Beschreibung-und-Protokoll.pdf 
 sensor:
   - platform: template
     sensors:
@@ -615,7 +614,7 @@ sensor:
       eu13l_hp1_error_state_txt:
         friendly_name: "EU13L_Hp1_Error_State_txt"
         value_template: >
-          {{ ['OK', 'Message', 'Warnung', 'Alarm', 'Fault'][states('sensor.eu13l_hp1_error_state')|int(0)] }}
+          {{ ['None', 'Message', 'Warnung', 'Alarm', 'Fault'][states('sensor.eu13l_hp1_error_state')|int(0)] }}
       eu13l_hp1_state_txt:
         friendly_name: "EU13L_Hp1_State_txt"
         value_template: >
