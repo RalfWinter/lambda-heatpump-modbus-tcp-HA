@@ -622,7 +622,7 @@ sensor:
       eu13l_hp1_state_txt:
         friendly_name: "EU13L_Hp1_State_txt"
         value_template: >
-          {{ ['Init', 'Reference', 'Restart-Block', 'Ready', 'Start Pumps', 'Start Compressor', 'Pre-Regulation', 'Regulation', 'Not Used', 'Cooling', 'Defrosting', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Stopping', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Fault-Lock', 'Alarm-Block', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Error-Reset'][states('sensor.eu13l_hp1_state')|int(0)] }}
+          {{ ['Init', 'Reference', 'Restart-Block', 'Ready', 'Start Pumps', 'Start Compressor', 'Pre-Regulation', 'Regulation', 'Not Used', 'Cooling', 'Defrosting', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Stopping', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Fault-Lock', 'Alarm-Block', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Not Used', 'Error-Reset'][states('sensor.eu13l_hp1_state')|int(0)] }}
       eu13l_hp1_operating_state_txt:
         friendly_name: "EU13L_Hp1_Operating_State_txt"
         value_template: >
